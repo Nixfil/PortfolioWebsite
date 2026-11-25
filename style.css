@@ -200,8 +200,18 @@ h1 span,
 ------------------------- */
 
 .work {
+    position: relative;
     padding: 150px 5%;
 }
+
+    .work::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        width: 90%;
+        border-bottom: 1px solid #292929;
+    }
 
 .section-heading {
     margin-bottom: 70px;
@@ -490,19 +500,14 @@ h2 {
 
 .experience-values {
     margin-top: 100px;
-
     padding-top: 100px;
     padding-bottom: 100px;
-
     border-bottom: 1px solid #292929;
-
     display: grid;
-
     grid-template-columns: 1.3fr 1fr;
-
     gap: 100px;
-
     align-items: start;
+    border-bottom: 1px solid #292929;
 }
 
 
@@ -726,7 +731,8 @@ footer {
     }
 
     .work {
-        padding: 100px 20px;
+        padding: 150px 5%;
+        border-bottom: 1px solid #292929;
     }
 
     .project-grid {

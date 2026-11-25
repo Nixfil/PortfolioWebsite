@@ -142,18 +142,32 @@ if (featuredVideo && featuredPlayer && vfxItems.length > 0) {
 // =========================
 
 const logo = document.querySelector(".logo");
+const isIndexPage = document.querySelector("#work") !== null;
 
 if (logo) {
+
+    // Change logo when scrolling
     window.addEventListener("scroll", () => {
         logo.classList.toggle("scrolled", window.scrollY > 50);
     });
+
+    // Index page: scroll to top when clicking the upward arrow
+    if (logo.classList.contains("index-logo")) {
+        logo.addEventListener("click", (event) => {
+            event.preventDefault();
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
 }
+
+
 // =========================
 // INDEX PAGE SCROLL MEMORY
 // =========================
-
-// Check if we're currently on the index page
-const isIndexPage = document.querySelector("#work") !== null;
 
 // Save the scroll position when leaving the index page
 if (isIndexPage) {
@@ -168,7 +182,14 @@ window.addEventListener("pageshow", () => {
         const savedPosition = sessionStorage.getItem("indexScrollPosition");
 
         if (savedPosition !== null) {
+            document.documentElement.style.scrollBehavior = "auto";
+
             window.scrollTo(0, Number(savedPosition));
+
+            requestAnimationFrame(() => {
+                document.documentElement.style.scrollBehavior = "";
+            });
+
             sessionStorage.removeItem("indexScrollPosition");
         }
     }
