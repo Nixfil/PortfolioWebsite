@@ -137,3 +137,12 @@ if (featuredVideo && featuredPlayer && vfxItems.length > 0) {
     selectProject(vfxItems[0]);
 
 }
+const logo = document.querySelector(".logo");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+        logo.classList.add("scrolled");
+    } else {
+        logo.classList.remove("scrolled");
+    }
+});

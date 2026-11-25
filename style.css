@@ -63,6 +63,36 @@ nav a:hover {
     opacity: 1;
 }
 
+.logo {
+    position: relative;
+    display: inline-block;
+}
+
+.logo-text,
+.logo-arrow {
+    display: inline-block;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.logo-arrow {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    opacity: 0;
+    transform: translateY(-50%) translateX(-8px);
+    font-size: 28px;
+}
+
+/* Scrolled state */
+.logo.scrolled .logo-text {
+    opacity: 0;
+    transform: translateX(8px);
+}
+
+.logo.scrolled .logo-arrow {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
 
 /* -------------------------
    HERO
