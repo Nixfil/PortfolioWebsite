@@ -1,0 +1,198 @@
+
+/* =========================
+   VFX PAGE
+========================= */
+
+.vfx-page {
+    width: 100%;
+    padding: 140px 5% 100px;
+}
+
+    /* FEATURED VIDEO */
+
+    .vfx-page .vfx-featured {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 100px;
+    }
+
+    .vfx-page .vfx-featured-player {
+        width: 70%;
+        height: calc(90vw * 0.7 * 9 / 16);
+        max-width: 100%;
+        background: #191919;
+        overflow: hidden;
+        transition: width 0.3s ease;
+    }
+
+        /* FEATURED VIDEO ELEMENT */
+
+        .vfx-page .vfx-featured-player video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+        }
+
+    /* GRID */
+
+    .vfx-page .vfx-grid {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        column-gap: 20px;
+        row-gap: 60px;
+    }
+
+    /* GRID ITEMS */
+
+    .vfx-page .vfx-item {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        color: #f2f2f2;
+        text-align: left;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    /* PREVIEW */
+
+    .vfx-page .vfx-preview {
+        position: relative;
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        background: #191919;
+    }
+
+    /* PROJECT INFORMATION */
+
+    .vfx-page .vfx-info {
+        padding-top: 20px;
+    }
+
+        .vfx-page .vfx-info p {
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            opacity: 0.5;
+            margin-bottom: 5px;
+        }
+
+        .vfx-page .vfx-info h3 {
+            font-size: 12.5px;
+        }
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .vfx-page {
+        padding: 110px 20px 80px;
+    }
+
+        .vfx-page .vfx-featured {
+            margin-bottom: 60px;
+        }
+
+        .vfx-page .vfx-featured-player {
+            width: 100%;
+            height: calc((100vw - 40px) * 9 / 16);
+        }
+
+        .vfx-page .vfx-grid {
+            grid-template-columns: 1fr;
+            row-gap: 50px;
+        }
+}
+
+/* =========================
+   VFX VIDEO PREVIEWS
+========================= */
+
+.vfx-page .vfx-preview img,
+.vfx-page .vfx-preview video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.vfx-page .vfx-preview img {
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.vfx-page .vfx-preview video {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* PLAY VIDEO ON HOVER */
+
+.vfx-page .vfx-item:not(.is-playing):hover .vfx-preview video {
+    opacity: 1;
+}
+
+.vfx-page .vfx-item:not(.is-playing):hover .vfx-preview img {
+    opacity: 0;
+}
+
+/* PLAYING STATE */
+
+.vfx-page .vfx-item.is-playing .vfx-preview img {
+    filter: blur(5px);
+}
+
+/* OVERLAY */
+
+.vfx-page .vfx-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+    .vfx-page .vfx-overlay span {
+        font-size: 15px;
+        color: #ffffff;
+        text-transform: none;
+    }
+
+/* SHOW PLAYING TEXT */
+
+.vfx-page .vfx-item.is-playing .vfx-overlay {
+    opacity: 1;
+}
+
+/* =========================
+   HIGHLIGHT REEL CARD
+========================= */
+
+.vfx-page .vfx-reel-preview {
+    background: #191919;
+}
+
+    .vfx-page .vfx-reel-preview .vfx-overlay {
+        opacity: 1;
+    }
+
+.vfx-page .vfx-item.is-playing .vfx-reel-preview .vfx-overlay span {
+    /* Selected label */
+}
+

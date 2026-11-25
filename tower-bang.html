@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nikolai Filipov | Tower Bang</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="project-style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo">NIKOLAI FILIPOV</a>
+    </header>
+
+
+
+
+    <main class="project-page">
+
+        <!-- PROJECT TITLE -->
+        <section class="project-heading">
+            <h1>Tower Bang</h1>
+        </section>
+
+        <!-- SECTION SUBTITLE -->
+        <section class="project-subheading">
+            <h2>Gameplay</h2>
+        </section>
+
+        <!-- GAMEPLAY PLAYER -->
+        <section class="project-featured">
+            <div class="project-player">
+                <video id="projectVideo" controls playsinline preload="metadata">
+                    <source src="Assets/tower-bang/gameplay.mp4" type="video/mp4">
+                    Your browser does not support video playback.
+                </video>
+            </div>
+        </section>
+
+
+        <!-- PROJECT INFORMATION PANEL -->
+        <section class="project-description">
+
+            <div class="project-description-content">
+
+                <!-- DESCRIPTION -->
+                <section class="project-info-section">
+
+                    <h2>Description</h2>
+
+                    <p>
+                        Tower Bang is a mobile tower-defence game where players defend against waves of enemies using towers with branching upgrade paths, allowing them to develop and experiment with different defensive strategies.
+                        <br />
+                        <br />
+                        The project was developed as part of my ""Developing for Mobile" elective at Hanze University of Applied Sciences. It was my first experience developing a mobile game, giving me the opportunity to explore the design and technical considerations that come with creating games for smaller screens.
+                        <br />
+                        <br />
+                        Throughout development, I learned how to analyse and make effective use of limited screen space, implement camera controls suited for mobile devices, and apply UI design principles that improve readability and accessibility on smaller displays. I also gained experience adapting gameplay systems and interactions to a mobile environment, while considering how players would navigate and interact with the game.
+                    </p>
+
+                </section>
+
+
+
+                <!-- MY ROLE -->
+                <section class="project-info-section">
+
+                    <h2>My Role</h2>
+
+                    <!-- MOBILE UI & SCREEN ANALYSIS -->
+
+                    <h3 class="project-role-subheading">
+                        Mobile UI & Screen Analysis
+                    </h3>
+
+                    <p>
+                        One of the biggest learning experiences of this project was designing an interface specifically for mobile devices. I started by analysing the available screen space, considering how players would hold their phones, interact with the game, and access important information without obstructing the battlefield.
+                    </p>
+
+                    <figure class="project-inline-image">
+                        <img src="Assets/tower-bang/display-analysis.png"
+                             alt="Mobile Display Analysis">
+                        <figcaption>
+                            Analysis of available screen space and mobile interface placement.
+                        </figcaption>
+                    </figure>
+
+                    <p>
+                        I chose landscape orientation to give players a wider view of the level, while designing the interface around touch interactions such as tapping, dragging, and pinching to control the camera. I also worked with UI anchors and Layout Groups to ensure that interface elements maintained their positions across different screen resolutions.
+                    </p>
+
+                    <figure class="project-inline-image">
+                        <img src="Assets/tower-bang/gameplay.png"
+                             alt="Tower Bang Gameplay">
+                        <figcaption>
+                            Tower Bang gameplay showing the battlefield and main interface.
+                        </figcaption>
+                    </figure>
+
+                    <p>
+                        A particular challenge was presenting tower information without taking too much attention away from the gameplay. I implemented a dynamically populated upgrade interface that displays the selected tower's statistics, upgrade costs, and available upgrade paths. This allowed players to make informed decisions while keeping the battlefield visible.
+                    </p>
+
+                    <figure class="project-inline-image">
+                        <img src="Assets/tower-bang/ui-stats.png"
+                             alt="Tower Statistics UI">
+                        <figcaption>
+                            Dynamically populated tower statistics and upgrade options.
+                        </figcaption>
+                    </figure>
+
+
+                    <!-- GAMEPLAY SYSTEMS & MODULARITY -->
+
+                    <h3 class="project-role-subheading">
+                        Gameplay Systems & Modularity
+                    </h3>
+
+                    <p>
+                        On the technical side, I developed the core gameplay systems in Unity, including enemy spawning, tower behaviour, upgrades, and wave progression.
+                    </p>
+
+                    <p>
+                        I focused on keeping these systems modular and configurable rather than relying on hardcoded behaviours. Towers, enemies, and projectiles were built around reusable base classes and prefabs, allowing their behaviour and properties to be extended without duplicating large amounts of code.
+                    </p>
+
+                    <p>
+                        I also implemented the wave management system using Scriptable Objects. This allowed me to configure enemy types, quantities, spawn intervals, and delays between waves directly in the Unity Inspector. It made balancing and adjusting the difficulty much easier without having to modify the underlying code.
+                    </p>
+
+                    <figure class="project-inline-image">
+                        <img src="Assets/tower-bang/wave-configuration.png"
+                             alt="Wave Configuration in Unity">
+                        <figcaption>
+                            Configuring enemy groups, spawn quantities, intervals, and wave delays.
+                        </figcaption>
+                    </figure>
+
+
+                    <!-- MONETISATION & VISUAL EFFECTS -->
+
+                    <h3 class="project-role-subheading">
+                        Monetisation & Visual Effects
+                    </h3>
+
+                    <p>
+                        Another area I explored was mobile game monetisation. I designed and implemented a rewarded video ad system using Unity Ads. Rather than interrupting gameplay with forced advertisements, players are offered the option to watch an ad after losing a level. Completing the advertisement allows them to revive and continue playing.
+                    </p>
+
+                    <div class="project-image-group">
+
+                        <div class="project-image-group-items">
+                            <img src="Assets/tower-bang/end-screen.png"
+                                 alt="Game Over Screen">
+
+                            <img src="Assets/tower-bang/monetization.png"
+                                 alt="Rewarded Advertisement">
+                        </div>
+
+                        <p class="project-image-caption">
+                            Game-over screen and optional rewarded advertisement revive system.
+                        </p>
+
+                    </div>
+
+                    <p>
+                        I also experimented with creating simple visual effects for mobile gameplay. These effects were used to make combat interactions more noticeable and provide immediate visual feedback without relying on unnecessarily complex effects that could impact performance.
+                    </p>
+
+                    <figure class="project-inline-image">
+                        <img src="Assets/tower-bang/vfx.png"
+                             alt="Tower Bang Visual Effects">
+                        <figcaption>
+                            Gameplay visual effects created to improve combat feedback.
+                        </figcaption>
+                    </figure>
+
+
+                    <!-- STORE PAGE & TARGET AUDIENCE -->
+
+                    <h3 class="project-role-subheading">
+                        Store Page & Target Audience
+                    </h3>
+
+                    <p>
+                        Beyond the development of the game itself, I also worked on how Tower Bang would be presented to potential players. Using the target audience research from my design document, I created the game's itch.io store page, including its visual presentation, screenshots, and promotional text.
+                    </p>
+
+                    <p>
+                        I focused on communicating the main selling points of the game through its visuals, highlighting tower variety, upgrade possibilities, strategic experimentation, and progression. I also designed the app icon and promotional screenshots to maintain a consistent visual identity and make the game immediately recognisable.
+                    </p>
+
+                    <figure class="project-inline-image">
+                        <img src="Assets/tower-bang/itch-page.png"
+                             alt="Tower Bang Store Page">
+                        <figcaption>
+                            Tower Bang's itch.io store page and promotional presentation.
+                        </figcaption>
+                    </figure>
+
+                </section>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Nikolai Filipov</p>
+    </footer>
+
+</body>
+</html>
+
+https://store.steampowered.com/f432d34a-96cd-4ac8-ab03-de4461be4ca4

@@ -1,0 +1,325 @@
+
+/* =========================
+   PROJECT PAGE
+========================= */
+
+.project-page {
+    width: 100%;
+    padding: 140px 5% 100px;
+}
+
+/* GAMEPLAY PLAYER */
+
+.project-featured {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.project-player {
+    width: 70%;
+    aspect-ratio: 16 / 9;
+    background: #191919;
+    overflow: hidden;
+}
+
+    .project-player video {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+    }
+
+
+/* PROJECT HEADING */
+
+.project-heading {
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+    .project-heading h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: clamp(64px, 9vw, 180px);
+        font-weight: 700;
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+        text-transform: uppercase;
+    }
+
+/* PROJECT SUBHEADING */
+
+.project-subheading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+    .project-subheading h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 22px;
+        font-weight: normal;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+    }
+
+/* MY ROLE SUBHEADINGS */
+.project-role-subheading {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+
+
+/* =========================
+   PROJECT INFORMATION PANEL
+========================= */
+
+.project-description {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding: 60px 40px;
+    background: #191919;
+}
+
+.project-description-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+/* TEXT SECTIONS */
+
+.project-info-section h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 25px;
+}
+
+.project-info-section p,
+.project-content-text p,
+.project-content-centered p {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.7;
+}
+
+.project-role-subheading {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* IMAGE AND TEXT ROWS */
+
+.project-content-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.project-content-image {
+    width: 50%;
+    flex-shrink: 0;
+}
+
+    .project-content-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+.project-content-text {
+    flex: 1;
+}
+
+/* IMAGE LEFT */
+
+.project-content-row.image-left {
+    flex-direction: row;
+}
+
+/* IMAGE RIGHT */
+
+.project-content-row.image-right {
+    flex-direction: row-reverse;
+}
+
+/* CENTERED IMAGE */
+
+.project-content-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+    .project-content-centered img {
+        display: block;
+        width: 70%;
+        height: auto;
+    }
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .project-description {
+        width: calc(100% + 20px);
+        margin-left: -10px;
+        padding: 35px 20px;
+    }
+
+    .project-description-content {
+        gap: 45px;
+    }
+
+    .project-content-row,
+    .project-content-row.image-right {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .project-content-image {
+        width: 100%;
+    }
+
+    .project-content-centered img {
+        width: 100%;
+    }
+}
+
+/* IMAGES WITH DESCRIPTIONS */
+.project-inline-image {
+    width: 70%;
+    margin: 35px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .project-inline-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .project-inline-image figcaption {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 12px;
+        font-style: italic;
+        text-align: center;
+        opacity: 0.6;
+        line-height: 1.5;
+    }
+
+    .project-inline-image.image-left {
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .project-inline-image.image-right {
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .project-inline-image.image-full {
+        width: 100%;
+    }
+
+/* IMAGE GROUP */
+.project-image-group {
+    width: 85%;
+    margin: 35px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-image-group-items {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+    .project-image-group-items img {
+        width: 50%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
+
+/* SHARED IMAGE CAPTION */
+.project-image-caption {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+    opacity: 0.6;
+    line-height: 1.5;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .project-image-group {
+        width: 100%;
+    }
+
+    .project-image-group-items {
+        flex-direction: column;
+    }
+
+        .project-image-group-items img {
+            width: 100%;
+        }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .project-description {
+        width: calc(100% + 20px);
+        margin-left: -10px;
+        padding: 35px 20px;
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .project-page {
+        padding: 110px 20px 80px;
+    }
+
+    .project-player {
+        width: 100%;
+    }
+
+    .project-heading {
+        width: 100%;
+    }
+}
