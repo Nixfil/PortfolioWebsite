@@ -137,12 +137,39 @@ if (featuredVideo && featuredPlayer && vfxItems.length > 0) {
     selectProject(vfxItems[0]);
 
 }
+// =========================
+// NAVBAR SCROLL ANIMATION
+// =========================
+
 const logo = document.querySelector(".logo");
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-        logo.classList.add("scrolled");
-    } else {
-        logo.classList.remove("scrolled");
+if (logo) {
+    window.addEventListener("scroll", () => {
+        logo.classList.toggle("scrolled", window.scrollY > 50);
+    });
+}
+// =========================
+// INDEX PAGE SCROLL MEMORY
+// =========================
+
+// Check if we're currently on the index page
+const isIndexPage = document.querySelector("#work") !== null;
+
+// Save the scroll position when leaving the index page
+if (isIndexPage) {
+    window.addEventListener("pagehide", () => {
+        sessionStorage.setItem("indexScrollPosition", window.scrollY);
+    });
+}
+
+// Restore the scroll position when returning to the index page
+window.addEventListener("pageshow", () => {
+    if (isIndexPage) {
+        const savedPosition = sessionStorage.getItem("indexScrollPosition");
+
+        if (savedPosition !== null) {
+            window.scrollTo(0, Number(savedPosition));
+            sessionStorage.removeItem("indexScrollPosition");
+        }
     }
 });
